@@ -1,0 +1,52 @@
+$clouds: #ecf0f1;
+$turquoise: #1abc9c;
+$greensea: #16a085;
+$night: #34495e;
+$midnight: #2c3e50;
+$transition: all .5s ease;
+
+
+/* Hide the input */
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.check-trail {
+  display: flex;
+  align-items: center;
+  width: 9em;
+  height: 5em;
+  background: $midnight;
+  border-radius: 2.5em;
+  transition: $transition;
+  cursor: pointer;
+}
+.check-handler {
+  display: flex;
+  margin-left: 0.5em;
+  justify-content: center;
+  align-items: center;
+  width: 4em;
+  height: 4em;
+  background: $night;
+  border-radius: 50%;
+  transition: $transition;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+  &:before {
+    content: "\00D7";
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+  }
+}
+input[type="checkbox"]:checked + .check-trail {
+  background: $greensea;
+  .check-handler {
+    margin-left: 50%;
+    background: $turquoise;
+    &::before {
+      content: "\2714"
+    }
+  }
+}

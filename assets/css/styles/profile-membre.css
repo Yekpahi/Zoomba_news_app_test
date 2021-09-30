@@ -1,0 +1,327 @@
+
+
+/** Header */
+
+.header{
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    height:100px;
+    width:100%;
+    border-bottom: 1px solid rgb(189, 168, 168);
+    box-shadow: 0 4px 3px -3px rgb(202, 171, 171);
+    z-index: 1;
+}
+
+.nav-ul{
+    display:flex;
+    flex-direction: row;
+    position: relative;
+    top:40px;
+}
+.logo{
+    left:50px;
+    width:50px;
+}
+
+
+.nav-ul .sign{
+    position:relative;
+    left:50%;
+    margin-left: 20px;
+    color:white;
+
+}
+
+.nav-ul li{
+    margin-left: 60px;
+    list-style: none;
+    position: relative;
+    left: 6%;
+
+}
+
+.navLogo{
+    margin-top:-12px;
+    text-align:center;
+}
+#volter{
+    margin-left: 10px;
+    font-size:20px;
+}
+
+.sign_in_icon{
+    height:18px;
+    width:18px;
+}
+
+.sign_up_icon{
+    height:20px;
+    width:20px;
+}
+
+.sign a {
+    text-decoration:none;
+}
+
+.home_icon {
+    height:30px;
+    width:30px;
+}
+
+.profile_image {
+    height:30px;
+    width:30px;
+    border-radius: 15px;
+    border: 2px solid blue;
+}
+
+.profile_user a {
+    text-decoration:none;
+    color:rgb(68, 58, 58);
+}
+
+.message_image {
+    height:60px;
+    width:60px;
+}
+
+.notification_image {
+    height:60px;
+    width:60px;
+
+}
+
+.message-notification {
+    margin-left: 20px;
+    list-style: none;
+    position: relative;
+    left: 34%;
+}
+
+/* Fin Header */
+
+/* Profil */
+
+.profile-conteneur {
+    height:300px;
+    width:100%;
+    background-color: bisque;
+    position: relative;
+    top: 120px;
+    padding: 20px;
+}
+
+.conteneur-gauche{
+    margin-top:20px;
+    height:600px;
+    width:20%;
+    background-color:red;
+    position: fixed;
+    bottom:-160px;
+    left:16.3%;
+}
+
+.conteneur-button-creer-article {
+    height:50px;
+    width:70%;
+    position: relative;
+    top: 200px;
+    left:30%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.conteneur-button-creer-article button {
+width: 35%;
+margin:5px;
+border: none;
+border-radius: 10px;
+}
+
+.div-photo-profil{
+    border-radius:5px;
+    position: relative;
+    width:20%;
+    height:100%;
+    box-shadow:2px 2px 5px rgb(136, 124, 124);
+    border:5px solid rgb(177, 112, 112);
+    overflow: hidden;
+
+}
+
+.div-photo-profil img{
+    width:100%;
+    height:100%;
+}
+
+/** Debut Day Night*/
+
+#main{
+    height:100%;
+    background:rgb(255, 253, 253);
+    position: absolute;
+    left:16.3%;
+    transition: 0.5s;
+}
+
+#main.dark {
+    height:100%;
+    background:rgb(87, 57, 100);
+    position: absolute;
+    left:16.3%;
+    transition: 0.5s;
+}
+
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+    top: -30px;
+    left:92%;
+	height: 18px;
+	width: 45px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 15px;
+	width: 15px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(25px);
+}
+
+
+.fa-moon {
+    height: 12px;
+	width: 12px;
+
+}
+
+.fa-sun {
+	height: 12px;
+	width: 12px;
+}
+
+/** Fin Day Night*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper .outer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .card{
+  background: #fff;
+  width: 430px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 600px;
+  justify-content: space-between;
+  border-radius: 100px 20px 20px 100px;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  animation: animate 15s linear infinite;
+  animation-delay: calc(3s * var(--delay));
+}
+.outer:hover .card{
+  animation-play-state: paused;
+}
+.wrapper .card:last-child{
+  animation-delay: calc(-3s * var(--delay));
+}
+@keyframes animate {
+  0%{
+    opacity: 0;
+    transform: translateY(100%) scale(0.5);
+  }
+  5%, 20%{
+    opacity: 0.4;
+    transform: translateY(100%) scale(0.7);
+  }
+  25%, 40%{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0%) scale(1);
+  }
+  45%, 60%{
+    opacity: 0.4;
+    transform: translateY(-100%) scale(0.7);
+  }
+  65%, 100%{
+    opacity: 0;
+    transform: translateY(-100%) scale(0.5);
+  }
+}
+.card .content{
+  display: flex;
+  align-items: center;
+}
+.wrapper .card .img{
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+.card .img img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card .details{
+  margin-left: 80px;
+}
+.details span{
+  font-weight: 600;
+  font-size: 18px;
+}
+.card a{
+  text-decoration: none;
+  padding: 7px 18px;
+  border-radius: 25px;
+  color: #fff;
+  background: linear-gradient(to bottom, #bea2e7 0%, #86b7e7 100%);
+  transition: all 0.3s ease;
+}
+.card a:hover{
+  transform: scale(0.94);
+}
